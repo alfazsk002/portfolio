@@ -1,0 +1,110 @@
+
+body{
+    margin: 0;
+}
+
+.scene{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+
+    background: linear-gradient(to top, #87CEEB, #E0F7FF);
+}
+
+.sun{
+    position: absolute;
+    top: 80px;
+    right: 120px;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #FFD700, #FFA500);
+    border-radius: 50%;
+
+    box-shadow: 0 0 50px #FFD700, 0 0 100px #FFA500;
+
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse{
+    0%{ transform: scale(1); }
+    50%{ transform: scale(1.1); }
+    100%{ transform: scale(1); }
+}
+
+.cloud{
+    position: absolute;
+    background: white;
+    border-radius: 50px;
+}
+
+.cloud::before,
+.cloud::after{
+    content: "";
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud1{
+    width: 120px;
+    height: 50px;
+    top: 120px;
+    left: -150px;
+    animation: moveCloud 20s linear infinite;
+}
+
+.cloud1::before{
+    width: 60px;
+    height: 60px;
+    top: -30px;
+    left: 20px;
+}
+
+.cloud1::after{
+    width: 80px;
+    height: 80px;
+    top: -40px;
+    right: 20px;
+}
+
+.cloud2{
+    width: 150px;
+    height: 60px;
+    top: 200px;
+    left: -200px;
+    animation: moveCloud 30s linear infinite;
+}
+
+.cloud2::before{
+    width: 70px;
+    height: 70px;
+    top: -35px;
+    left: 30px;
+}
+
+.cloud2::after{
+    width: 90px;
+    height: 90px;
+    top: -45px;
+    right: 30px;
+}
+
+@keyframes moveCloud{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(120vw); }
+}
+
+.ground{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, #228B22, #32CD32);
+}
+.container{
+    color: black;
+}

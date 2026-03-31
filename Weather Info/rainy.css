@@ -1,0 +1,142 @@
+
+body{
+    margin: 0;
+}
+
+.scene{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+
+    /* dark rainy sky */
+    background: linear-gradient(to top, #2c3e50, #4b6cb7);
+}
+
+.cloud{
+    position: absolute;
+    background: #555;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.cloud::before,
+.cloud::after{
+    content: "";
+    position: absolute;
+    background: #555;
+    border-radius: 50%;
+}
+
+.cloud1{
+    width: 200px;
+    height: 80px;
+    top: 80px;
+    left: -250px;
+    animation: moveCloud 30s linear infinite;
+}
+
+.cloud1::before{
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    left: 30px;
+}
+
+.cloud1::after{
+    width: 120px;
+    height: 120px;
+    top: -60px;
+    right: 30px;
+}
+
+.cloud2{
+    width: 250px;
+    height: 90px;
+    top: 180px;
+    left: -300px;
+    animation: moveCloud 40s linear infinite;
+}
+
+.cloud2::before{
+    width: 120px;
+    height: 120px;
+    top: -55px;
+    left: 40px;
+}
+
+.cloud2::after{
+    width: 140px;
+    height: 140px;
+    top: -65px;
+    right: 40px;
+}
+
+@keyframes moveCloud{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(120vw); }
+}
+
+.rain{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.drop{
+    position: absolute;
+    bottom: 100%;
+    width: 2px;
+    height: 15px;
+    background: rgba(255,255,255,0.6);
+    animation: rainFall linear infinite;
+}
+
+.drop:nth-child(1){ left: 10%; animation-duration: 0.7s; }
+.drop:nth-child(2){ left: 20%; animation-duration: 0.6s; }
+.drop:nth-child(3){ left: 30%; animation-duration: 0.8s; }
+.drop:nth-child(4){ left: 40%; animation-duration: 0.5s; }
+.drop:nth-child(5){ left: 50%; animation-duration: 0.7s; }
+.drop:nth-child(6){ left: 60%; animation-duration: 0.6s; }
+.drop:nth-child(7){ left: 70%; animation-duration: 0.9s; }
+.drop:nth-child(8){ left: 80%; animation-duration: 0.5s; }
+.drop:nth-child(9){ left: 90%; animation-duration: 0.7s; }
+
+@keyframes rainFall{
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+@keyframes lightning{
+    0%, 95%, 100%{
+        background: linear-gradient(to top, #2c3e50, #4b6cb7);
+    }
+    96%{
+        background: white;
+    }
+    97%{
+        background: linear-gradient(to top, #2c3e50, #4b6cb7);
+    }
+}
+
+.scene{
+    animation: lightning 6s infinite;
+}
+
+.ground{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, #1e5631, #4caf50);
+}
