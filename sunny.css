@@ -1,4 +1,3 @@
-
 body{
     margin: 0;
 }
@@ -8,7 +7,8 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100vh; 
+    height: 100dvh; 
     z-index: -1;
     overflow: hidden;
 
@@ -17,12 +17,13 @@ body{
 
 .sun{
     position: absolute;
-    top: 80px;
-    right: 120px;
+    top: 10%;
+    right: 10%;
     width: 120px;
     height: 120px;
     background: radial-gradient(circle, #FFD700, #FFA500);
     border-radius: 50%;
+        filter: blur(0.5px);
 
     box-shadow: 0 0 50px #FFD700, 0 0 100px #FFA500;
 
@@ -35,10 +36,13 @@ body{
     100%{ transform: scale(1); }
 }
 
+/* ☁️ Clouds */
 .cloud{
     position: absolute;
     background: white;
     border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    will-change: transform;
 }
 
 .cloud::before,
@@ -52,7 +56,7 @@ body{
 .cloud1{
     width: 120px;
     height: 50px;
-    top: 120px;
+    top: 20%;
     left: -150px;
     animation: moveCloud 20s linear infinite;
 }
@@ -74,7 +78,7 @@ body{
 .cloud2{
     width: 150px;
     height: 60px;
-    top: 200px;
+    top: 35%;
     left: -200px;
     animation: moveCloud 30s linear infinite;
 }
@@ -98,13 +102,66 @@ body{
     to{ transform: translateX(120vw); }
 }
 
+/* 🌱 ground */
 .ground{
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 150px;
+    height: 130px;
     background: linear-gradient(to top, #228B22, #32CD32);
 }
+
+@media(max-width: 600px){
+
+    .sun{
+        width: 80px;
+        height: 80px;
+        top: 8%;
+        right: 5%;
+                filter: blur(0.5px);
+
+    }
+
+    .cloud1{
+        width: 90px;
+        height: 40px;
+        animation-duration: 15s;
+    }
+
+    .cloud2{
+        width: 110px;
+        height: 45px;
+        animation-duration: 20s;
+    }
+
+    .ground{
+        height: 80px;
+    }
+}
+
+@media(min-width: 601px) and (max-width: 1023px){
+
+    .sun{
+        width: 100px;
+        height: 100px;
+        filter: blur(0.5px);
+    }
+
+    .cloud1{
+        width: 110px;
+    }
+
+    .cloud2{
+        width: 130px;
+    }
+}
+
+@media(min-width: 1024px){
+    .ground{
+        height: 150px;
+    }
+}
+
 .container{
     color: black;
 }

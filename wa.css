@@ -12,7 +12,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 10px;
 }
 
 .scene{
@@ -29,8 +30,8 @@ body{
 
 .container{
     text-align: center;
-    width: 95%;
-    max-width: 360px;
+    width: 100%;
+    max-width: 400px;
 
     padding: 20px;
     border-radius: 25px;
@@ -43,6 +44,37 @@ body{
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
 
     transition: 0.3s;
+}
+
+@media(min-width: 1024px){
+    .container{
+        max-width: 450px;
+        padding: 30px;
+    }
+}
+
+@media(min-width: 600px) and (max-width: 1023px){
+    .container{
+        max-width: 420px;
+        padding: 25px;
+    }
+}
+
+@media(max-width: 599px){
+    .container{
+        width: 100%;
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+
+    input, button{
+        font-size: 14px;
+        padding: 10px;
+    }
 }
 
 .container h2{
@@ -99,6 +131,12 @@ button:hover{
     font-weight: 600;
 }
 
+@media(max-width: 500px){
+    .temp{
+        font-size: 32px;
+    }
+}
+
 .weather-type{
     font-size: 18px;
     margin-top: 5px;
@@ -107,6 +145,12 @@ button:hover{
 #icon{
     width: 80px;
     margin-top: 10px;
+}
+
+@media(max-width: 500px){
+    #icon{
+        width: 60px;
+    }
 }
 
 .city{
@@ -145,10 +189,4 @@ body.night .scene{
 
 body.night .container{
     background: rgba(0,0,0,0.4);
-}
-
-@media(max-width: 400px){
-    .container{
-        padding: 15px;
-    }
 }

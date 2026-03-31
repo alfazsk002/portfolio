@@ -1,4 +1,3 @@
-
 body{
     margin: 0;
 }
@@ -8,7 +7,8 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100vh; 
+    height: 100dvh; 
     z-index: -1;
     overflow: hidden;
 
@@ -19,8 +19,7 @@ body{
     position: absolute;
     background: #f1f1f1;
     border-radius: 50px;
-
-    /* soft shadow for depth */
+    will-change: transform;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
@@ -35,7 +34,7 @@ body{
 .cloud1{
     width: 180px;
     height: 70px;
-    top: 100px;
+    top: 15%;
     left: -200px;
 
     animation: moveCloud 40s linear infinite;
@@ -58,7 +57,7 @@ body{
 .cloud2{
     width: 220px;
     height: 80px;
-    top: 200px;
+    top: 30%;
     left: -250px;
 
     animation: moveCloud 50s linear infinite;
@@ -81,7 +80,7 @@ body{
 .cloud3{
     width: 140px;
     height: 60px;
-    top: 300px;
+    top: 45%;
     left: -180px;
 
     animation: moveCloud 60s linear infinite;
@@ -123,10 +122,58 @@ body{
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 150px;
+    height: 120px;
 
     background: linear-gradient(to top, #6b8e23, #8fbc8f);
 }
+
+@media(max-width: 600px){
+
+    .cloud1{
+        width: 120px;
+        height: 50px;
+        animation-duration: 30s;
+    }
+
+    .cloud2{
+        width: 150px;
+        height: 60px;
+        animation-duration: 35s;
+    }
+
+    .cloud3{
+        width: 100px;
+        height: 45px;
+        animation-duration: 40s;
+    }
+
+    .ground{
+        height: 80px;
+    }
+}
+
+@media(min-width: 601px) and (max-width: 1023px){
+
+    .cloud1{
+        width: 150px;
+    }
+
+    .cloud2{
+        width: 180px;
+    }
+
+    .cloud3{
+        width: 120px;
+    }
+}
+
+@media(min-width: 1024px){
+
+    .ground{
+        height: 150px;
+    }
+}
+
 .container{
     color: black;
 }
