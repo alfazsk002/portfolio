@@ -8,10 +8,12 @@
 /* body */
 body{
     font-family: Arial;
-    height:100vh;
+    min-height:100vh; /* height না, min-height */
     display:flex;
     justify-content:center;
     align-items:center;
+
+    padding:15px; /* mobile এ gap রাখবে */
 
     background: linear-gradient(135deg,#667eea,#764ba2);
     color:#fff;
@@ -24,9 +26,11 @@ body{
 
     padding:25px;
     border-radius:20px;
-    width:300px;
-    text-align:center;
 
+    width:100%;
+    max-width:400px; /* laptop/tablet control */
+
+    text-align:center;
     box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
@@ -37,12 +41,14 @@ h2{
 /* input */
 input{
     width:100%;
-    padding:10px;
+    padding:12px;
     margin-top:10px;
 
     border:none;
     border-radius:10px;
     outline:none;
+
+    font-size:16px; /* mobile zoom issue fix */
 }
 
 /* password box */
@@ -61,7 +67,7 @@ input{
 /* button */
 button{
     margin-top:15px;
-    padding:10px;
+    padding:12px;
     width:100%;
 
     border:none;
@@ -71,15 +77,4 @@ button{
     color:#333;
 
     cursor:pointer;
-    transition:0.3s;
-}
-
-button:hover{
-    transform:scale(1.05);
-}
-
-/* message */
-#msg{
-    margin-top:10px;
-    font-size:14px;
-}
+    transition:

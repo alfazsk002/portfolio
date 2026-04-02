@@ -6,28 +6,30 @@ window.addEventListener("load", () => {
 
 // 🌙 THEME TOGGLE
 const toggle = document.getElementById("themeToggle");
-const menuToggle = document.getElementById("menuToggle");
-const nav = document.getElementById("navLinks");
 
 
 if(localStorage.getItem("theme") === "light"){
   document.body.classList.add("light");
   toggle.innerHTML = "☀️";
 }
+// THEME
 if(toggle){
-toggle.addEventListener("click", () => {
-  document.body.classList.toggle("light");
-
-
-  if(document.body.classList.contains("light")){
-    localStorage.setItem("theme","light");
-    toggle.innerHTML = "☀️";
-  } else {
-    localStorage.setItem("theme","dark");
-    toggle.innerHTML = "🌙";
-  }
-});
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+  });
 }
+
+// MENU (separate রাখ)
+const menuToggle = document.getElementById("menuToggle");
+const nav = document.getElementById("navLinks");
+
+if(menuToggle && nav){
+  menuToggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+}
+
+
 document.getElementById("btn1").addEventListener("click", () => {
   window.location.href = "wa.html";
 });
@@ -46,9 +48,6 @@ document.getElementById("btn4").addEventListener("click", () => {
 
 document.getElementById("btn5").addEventListener("click", () => {
   window.location.href = "fp.html";
-});
-toggle.addEventListener("click", () => {
-  nav.classList.toggle("active");
 });
 
 

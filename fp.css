@@ -1,28 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial;
   background: linear-gradient(135deg, #667eea, #764ba2);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 10px;
+  margin: 0;
 }
 
+/* Main Box */
 .container {
   background: white;
   padding: 20px;
   border-radius: 12px;
-  width: 300px;
+  width: 100%;
+  max-width: 400px; /* Laptop এর জন্য control */
   text-align: center;
 }
 
+/* Input + Button */
 .inputBox {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap; /* Mobile এ নিচে নামবে */
 }
 
 input {
   flex: 1;
   padding: 10px;
+  min-width: 0;
 }
 
 button {
@@ -39,6 +50,7 @@ button:hover {
   background: darkgreen;
 }
 
+/* List */
 li {
   background: #f2f2f2;
   margin-top: 10px;
@@ -46,4 +58,30 @@ li {
   border-radius: 6px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap; /* Mobile এ break হবে */
+}
+
+/* 🔥 Tablet */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    padding: 15px;
+  }
+}
+
+/* 🔥 Mobile */
+@media (max-width: 480px) {
+  .inputBox {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  li {
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+  }
 }
