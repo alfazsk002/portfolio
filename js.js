@@ -9,9 +9,6 @@ const toggle = document.getElementById("themeToggle");
 const menuToggle = document.getElementById("menuToggle");
 const nav = document.getElementById("navLinks");
 
-toggle.addEventListener("click", () => {
-  nav.classList.toggle("active");
-});
 
 if(localStorage.getItem("theme") === "light"){
   document.body.classList.add("light");
@@ -50,6 +47,10 @@ document.getElementById("btn4").addEventListener("click", () => {
 document.getElementById("btn5").addEventListener("click", () => {
   window.location.href = "fp.html";
 });
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+
 
 // 📩 CONTACT FORM
 
