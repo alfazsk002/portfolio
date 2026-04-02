@@ -77,4 +77,5 @@ button{
     color:#333;
 
     cursor:pointer;
-    transition:
+    transition: 0.3s;
+}    
