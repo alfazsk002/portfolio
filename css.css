@@ -1,0 +1,343 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+  background:#0f172a;
+  color: white;
+}
+
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  padding:20px 50px;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+  background-color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+nav a:hover{
+  color:#4facfe;
+}
+
+.profile-pic{
+  width: 150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  border: 4px solid white;
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+.hero{
+  position: relative;
+  overflow: hidden;
+
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+  background: linear-gradient(
+    to bottom,
+    #000814,
+    #001d3d,
+    #003566,
+    #0077b6
+  );
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+
+  box-shadow:
+    50px 100px white,
+    200px 150px white,
+    300px 80px white,
+    400px 200px white,
+    600px 120px white,
+    700px 300px white,
+    900px 180px white,
+    1000px 50px white,
+    1200px 220px white,
+    1400px 100px white;
+
+  animation: twinkle 2s infinite alternate;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+
+  box-shadow:
+    100px 50px white,
+    250px 200px white,
+    350px 150px white,
+    500px 100px white,
+    800px 250px white,
+    1100px 180px white,
+    1300px 300px white;
+
+  opacity: 0.7;
+  animation: moveStars 20s linear infinite;
+}
+
+.shooting-star{
+  position:absolute;
+  top:-50px;
+  width:2px;
+  height:80px;
+  background: linear-gradient(white, transparent);
+  transform: rotate(45deg);
+  opacity:0;
+  animation: shoot 5s linear infinite;
+  filter: drop-shadow(0 0 10px white);
+}
+
+@keyframes twinkle {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+
+@keyframes moveStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100vh); }
+}
+
+@keyframes shoot {
+  0%{
+    transform: translate(0,0) rotate(45deg);
+    opacity:1;
+  }
+  100%{
+    transform: translate(-600px,600px) rotate(45deg);
+    opacity:0;
+  }
+}
+
+.hero::before,
+.hero::after{
+  filter: drop-shadow(0 0 6px white);
+}
+
+.hero h1{
+  font-size:50px;
+}
+
+.hero button{
+  margin-top:20px;
+  padding:10px 25px;
+  border:none;
+  background:white;
+  color:black;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.hero button:hover{
+  transform:scale(1.1);
+}
+
+.section{
+  padding:100px 20px;
+  text-align:center;
+}
+
+.glass{
+  background: rgba(255,255,255,0.05); 
+  backdrop-filter:blur(10px);
+  border-radius:10px;
+}
+
+.skill{
+  margin:20px auto;
+  width:300px;
+}
+
+.bar{
+  height:10px;
+  background:#333;
+  border-radius:10px;
+}
+
+.bar div{
+  height:100%;
+  background:#4facfe;
+  border-radius:10px;
+}
+
+.projects{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.card{
+  background:#1e293b;
+  padding:20px;
+  border-radius:10px;
+  width:250px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+input, textarea{
+  display:block;
+  margin:10px auto;
+  padding:12px;
+  width:250px;
+  border:none;
+  border-radius:5px;
+}
+
+button{
+  padding:10px 20px;
+  border:none;
+  background:#4facfe;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+.heading{
+  color: #0077b6;
+}
+#loader{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:#000814;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.spinner{
+  width:50px;
+  height:50px;
+  border:5px solid #333;
+  border-top:5px solid #4facfe;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  100%{transform:rotate(360deg);}
+}
+
+/* 🤖 CHATBOT BASE */
+#chatbot{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:300px;
+  background:#1e293b;
+  border-radius:12px;
+  overflow:hidden;
+  z-index:999;
+  transition:all 0.3s ease;
+}
+
+/* 🔻 COLLAPSED (small button) */
+#chatbot.collapsed{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+}
+
+/* Header */
+#chat-header{
+  background:#4facfe;
+  padding:10px;
+  text-align:center;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+/* Hide content when collapsed */
+#chatbot.collapsed #chat-content{
+  display:none;
+}
+
+/* Chat content */
+#chat-body{
+  height:220px;
+  overflow-y:auto;
+  padding:10px;
+  font-size:14px;
+}
+
+#chat-input{
+  width:100%;
+  padding:10px;
+  border:none;
+  outline:none;
+}
+
+/* 💬 MESSAGE */
+.msg{
+  margin:5px 0;
+}
+
+.user{
+  text-align:right;
+}
+
+.bot{
+  text-align:left;
+  color:#4facfe;
+}
+
+/* 📱 MOBILE */
+@media (max-width:600px){
+  #chatbot{
+    width:90%;
+    right:5%;
+  }
+
+  #chatbot.collapsed{
+    width:55px;
+    height:55px;
+    right:15px;
+  }
+}

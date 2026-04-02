@@ -1,57 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Weather App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="wa.css">
-  <link id="weatherTheme" rel="stylesheet" href="">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alfaz Portfolio</title>
+<link rel="stylesheet" href="css.css">
 </head>
 
 <body>
-
-<div class="scene">
-    <div class="sun"></div>
-
-    <div class="cloud cloud1"></div>
-    <div class="cloud cloud2"></div>
-    <div class="cloud cloud3"></div>
-
-    <div class="rain">
-        <div class="drop"></div>
-        <div class="drop"></div>
-        <div class="drop"></div>
-        <div class="drop"></div>
-        <div class="drop"></div>
-        <div class="drop"></div>
-        <div class="drop"></div>
-        <div class="drop"></div>
-    </div>
-
-    <div class="ground"></div>
+<div id="loader">
+  <div class="spinner"></div>
 </div>
+<nav>
+  <h2 class="heading">Alfaz</h2>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+  
 
-<div class="container">
+<section id="home" class="hero">
+  <div class="shooting-star" style="left:20%; animation-delay:0s;"></div>
+<div class="shooting-star" style="left:50%; animation-delay:2s;"></div>
+<div class="shooting-star" style="left:80%; animation-delay:4s;"></div>
+    <img src="new.22.jpeg" alt="A frontend developer and UI designer, smiling at the camera in a professional portrait setting" class="profile-pic">
+  <h1>Hi, I'm Alfaz</h1>
+  <p>Frontend Developer | UI Designer</p>
+  <a href="#projects"><button>View Work</button></a>
+</section>
 
-    <h2>Weather Info 🌦️</h2>
+<section id="about" class="section glass">
+  <h2>About Me</h2> 
+  <p>I build modern, responsive and animated websites.</p>
+</section>
 
-    
-    <div class="search-box">
-        <input type="text" id="cityInput" placeholder="Enter city name">
-        <div id="suggestions"></div>
+<section id="skills" class="section">
+  <h2>Skills</h2>
+
+  <div class="skill">
+    <p>HTML</p>
+    <div class="bar"><div style="width:90%"></div></div>
+  </div>
+
+  <div class="skill">
+    <p>CSS</p>
+    <div class="bar"><div style="width:85%"></div></div>
+  </div>
+
+  <div class="skill">
+    <p>JavaScript</p>
+    <div class="bar"><div style="width:75%"></div></div>
+  </div>
+
+</section>
+
+<section id="projects" class="section">
+  <h2>Projects</h2>
+
+  <div class="projects">
+
+    <div class="card">
+      <h3>Weather App</h3>
+      <p>Animated weather UI</p>
+      <button id="btn1">Live</button>
     </div>
 
-    <button id="searchBtn">Search</button>
-
-    <div class="weather-card">
-        <div class="temp" id="result"></div>
-        <img id="icon">
-        <div class="weather-type"></div>
-        <div class="city"></div>
+    <div class="card">
+      <h3>Portfolio</h3>
+      <p>Modern design</p>
+      <button id="btn2">Live</button>
     </div>
+    <div class="card">
+      <h3>LogIn page</h3>
+      <p>Security UI</p>
+      <button id="btn3">Live</button>
+    </div>
+    <div class="card"> 
+      <h3>Password Genarator</h3>
+      <p>Get Secure Passwords</p>
+      <button id="btn4">Live</button>
+    </div>
+    <div class="card">
+      <h3>Task App</h3>
+      <p>Easy To Use</p>
+      <button id="btn5">Live</button>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact" class="section glass">
+  <h2>Contact</h2>
+
+  <input id="name" placeholder="Your Name">
+  <input id="email" placeholder="Email">
+  <textarea id="msg" placeholder="Message"></textarea>
+  <button type="button" id="sendBtn">Send Message</button>
+</section>
+<div id="chatbot" class="collapsed">
+  
+  <div id="chat-header" onclick="toggleChat()">
+    💬 Chat
+  </div>
+
+  <div id="chat-content">
+    <div id="chat-body">
+      <div class="msg bot">Hello! 👋</div>
+    </div>
+    <input type="text" id="chat-input" placeholder="Type message...">
+  </div>
 
 </div>
-
-<script src="wa.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="js.js"></script>
 
 </body>
+
 </html>

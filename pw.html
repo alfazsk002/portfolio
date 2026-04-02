@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="pw.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h2>Password Generator 🔐</h2>
+
+  <!-- password box -->
+  <div class="pass-box">
+    <input type="password" id="password" readonly placeholder="Click Generate">
+    <button id="toggleBtn">Show</button>
+  </div>
+
+  <!-- options -->
+  <div class="options">
+    <label><input type="checkbox" id="uppercase" checked> Uppercase</label>
+    <label><input type="checkbox" id="lowercase" checked> Lowercase</label>
+    <label><input type="checkbox" id="numbers" checked> Numbers</label>
+    <label><input type="checkbox" id="symbols"> Symbols</label>
+  </div>
+
+  <!-- length -->
+  <input type="range" id="length" min="6" max="20" value="10">
+  <p>Password Length: <span id="lenVal">10</span></p>
+
+  <!-- buttons -->
+  <button id="generateBtn">Generate</button>
+  <button id="copyBtn">Copy</button>
+
+  <!-- strength -->
+  <div id="strength"></div>
+
+  <!-- history -->
+  <div id="historyBox"></div>
+
+</div>
+
+<script src="pw.js"></script>
+
+</body>
+</html>

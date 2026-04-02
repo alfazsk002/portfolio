@@ -1,0 +1,85 @@
+/* reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* body */
+body{
+    font-family: Arial;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    color:#fff;
+}
+
+/* container */
+.container{
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+
+    padding:25px;
+    border-radius:20px;
+    width:300px;
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+h2{
+    margin-bottom:15px;
+}
+
+/* input */
+input{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+
+    border:none;
+    border-radius:10px;
+    outline:none;
+}
+
+/* password box */
+.pass-box{
+    position:relative;
+}
+
+.pass-box span{
+    position:absolute;
+    right:10px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+}
+
+/* button */
+button{
+    margin-top:15px;
+    padding:10px;
+    width:100%;
+
+    border:none;
+    border-radius:10px;
+
+    background:#fff;
+    color:#333;
+
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* message */
+#msg{
+    margin-top:10px;
+    font-size:14px;
+}

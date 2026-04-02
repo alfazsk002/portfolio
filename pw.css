@@ -1,0 +1,120 @@
+/* reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* body */
+body{
+    font-family: Arial, sans-serif;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    color:#fff;
+}
+
+/* container */
+.container{
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+
+    padding:25px;
+    border-radius:20px;
+    width:320px;
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* title */
+h2{
+    margin-bottom:15px;
+}
+
+/* password box */
+.pass-box{
+    display:flex;
+    gap:10px;
+}
+
+.pass-box input{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    cursor: not-allowed;
+
+}
+
+/* options */
+.options{
+    margin-top:15px;
+    text-align:left;
+    font-size:14px;
+}
+
+.options label{
+    display:block;
+    margin-bottom:5px;
+}
+
+/* slider */
+input[type="range"]{
+    width:100%;
+    margin-top:10px;
+}
+
+/* buttons */
+button{
+    margin-top:10px;
+    padding:10px;
+    width:100%;
+
+    border:none;
+    border-radius:10px;
+
+    background:#fff;
+    color:#333;
+
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    background:#e6e6e6;
+}
+
+/* strength */
+#strength{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.weak{ color:red; }
+.medium{ color:orange; }
+.strong{ color:limegreen; }
+
+/* history */
+#historyBox{
+    margin-top:15px;
+    max-height:120px;
+    overflow:auto;
+    text-align:left;
+    font-size:13px;
+}
+
+.history-item{
+    padding:6px;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+    cursor:pointer;
+}
+
+.history-item:hover{
+    background: rgba(255,255,255,0.1);
+}
