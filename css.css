@@ -377,11 +377,11 @@ button:hover{
   font-size: 25px;
   cursor: pointer;
 }
-#navLinks{
+.navLinks{
   display: none;
 }
 
-#navLinks.active{
+.navLinks.active{
   display: block;
 }
 }
