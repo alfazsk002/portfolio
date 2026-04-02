@@ -6,6 +6,12 @@ window.addEventListener("load", () => {
 
 // 🌙 THEME TOGGLE
 const toggle = document.getElementById("themeToggle");
+const menuToggle = document.getElementById("menuToggle");
+const nav = document.getElementById("navLinks");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
 
 if(localStorage.getItem("theme") === "light"){
   document.body.classList.add("light");
